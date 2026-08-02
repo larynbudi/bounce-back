@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Bounce Back Program — Laryn Breedlove</title>
+  <meta name="description" content="A comprehensive program and roadmap to rebalance your hormones, regain mental clarity, and optimize your body. Join the waitlist.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --cream:      #FDFAF4;
+      --warm-white: #FAF6EE;
+      --gold:       #C4922A;
+      --gold-light: #F2E4C0;
+      --gold-pale:  #FBF5E6;
+      --rose:       #7D2B4C;
+      --rose-mid:   #9C3A5F;
+      --rose-light: #F7ECF1;
+      --text:       #1C1208;
+      --text-soft:  #4A3B2E;
+      --text-muted: #7A6655;
+      --border:     #E8DEC8;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===================== NAV ===================== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 6%;
+      background: rgba(253, 250, 244, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    /* ===================== BUTTONS ===================== */
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      border-radius: 2px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      border: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary   { background: var(--rose); color: #fff; }
+    .btn-primary:hover { background: #6A2340; }
+
+    .btn-outline   { background: transparent; color: var(--rose); border: 1.5px solid var(--rose); }
+    .btn-outline:hover { background: var(--rose); color: #fff; }
+
+    .btn-gold      { background: var(--gold); color: #fff; }
+    .btn-gold:hover { background: #A8791E; }
+
+    .btn-dark      { background: var(--text); color: var(--cream); }
+    .btn-dark:hover { background: var(--text-soft); }
+
+    /* ===================== HERO ===================== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 10rem 6% 7rem;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 30%, rgba(196,146,42,0.09) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 20% 80%, rgba(125,43,76,0.07) 0%, transparent 60%),
+        var(--cream);
+    }
+
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.6rem;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.1s ease forwards;
+    }
+
+    .hero-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(5rem, 13vw, 10rem);
+      font-weight: 300;
+      line-height: 0.92;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.25s ease forwards;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      color: var(--rose);
+    }
+
+    .hero-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.38s ease forwards;
+    }
+
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+      max-width: 560px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.5s ease forwards;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.62s ease forwards;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.9s ease forwards;
+    }
+
+    .hero-scroll span {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollPulse 2s infinite;
+    }
+
+    /* ===================== TRUST BAR ===================== */
+    .trust-bar {
+      background: var(--text);
+      color: var(--cream);
+      text-align: center;
+      padding: 1.1rem 6%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+
+    .trust-item {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(253,250,244,0.75);
+      padding: 0.2rem 1.5rem;
+      border-right: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .trust-item:last-child { border-right: none; }
+
+    /* ===================== LAYOUT UTILITIES ===================== */
+    .container { max-width: 960px; margin: 0 auto; }
+    .container-wide { max-width: 1200px; margin: 0 auto; }
+
+    section { padding: 6rem 6%; }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title em { font-style: italic; color: var(--rose); }
+
+    /* ===================== STORY ===================== */
+    .story { background: var(--warm-white); }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .story-text p {
+      font-size: 1.03rem;
+      color: var(--text-soft);
+      line-height: 1.9;
+      margin-bottom: 1.4rem;
+    }
+
+    .story-text .btn { margin-top: 1rem; }
+
+    .story-photo-wrap {
+      position: relative;
+    }
+
+    .story-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: 3px;
+      display: block;
+    }
+
+    .story-photo-placeholder {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(145deg, var(--gold-light) 0%, var(--rose-light) 100%);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .story-photo-placeholder span {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--text-muted);
+      font-size: 1rem;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .story-accent {
+      position: absolute;
+      bottom: -1.5rem;
+      left: -1.5rem;
+      width: 70%;
+      height: 70%;
+      border: 1.5px solid var(--gold);
+      border-radius: 3px;
+      z-index: -1;
+    }
+
+    /* ===================== ORIGIN ===================== */
+    .origin {
+      background: linear-gradient(160deg, var(--cream) 0%, var(--gold-pale) 100%);
+      text-align: center;
+    }
+
+    .origin .container { max-width: 720px; }
+
+    .origin-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.4rem, 3vw, 2.1rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text-soft);
+      line-height: 1.55;
+      margin: 2.5rem 0 3rem;
+      padding: 0 1.5rem;
+      border-left: 3px solid var(--gold);
+      text-align: left;
+    }
+
+    /* ===================== HOW IT WORKS ===================== */
+    .how { background: var(--text); }
+
+    .how .section-label { color: var(--gold); }
+    .how .section-title { color: var(--cream); }
+
+    .how-intro {
+      font-size: 1.02rem;
+      color: rgba(253,250,244,0.65);
+      line-height: 1.85;
+      max-width: 680px;
+      margin-bottom: 3.5rem;
+    }
+
+    .optimize-label-row {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(196,146,42,0.8);
+      margin-bottom: 1.2rem;
+    }
+
+    .optimize-strip {
+      display: flex;
+      border: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 4rem;
+      overflow-x: auto;
+    }
+
+    .optimize-cell {
+      flex: 1;
+      min-width: 120px;
+      padding: 1.8rem 1rem;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+    }
+
+    .optimize-cell:last-child { border-right: none; }
+
+    .optimize-icon {
+      font-size: 1.6rem;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .optimize-name {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .pillar {
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 2.5rem 2rem;
+      border-radius: 3px;
+      transition: border-color 0.25s;
+    }
+
+    .pillar:hover { border-color: rgba(196,146,42,0.4); }
+
+    .pillar-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      font-weight: 300;
+      color: var(--gold);
+      opacity: 0.3;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .pillar-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 0.7rem;
+    }
+
+    .pillar-desc {
+      font-size: 0.88rem;
+      color: rgba(253,250,244,0.55);
+      line-height: 1.75;
+    }
+
+    .how-duration {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: rgba(253,250,244,0.5);
+      margin-bottom: 2.5rem;
+    }
+
+    /* ===================== WHAT YOU GET ===================== */
+    .what { background: var(--warm-white); }
+
+    .deliverables {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin: 3rem 0 4rem;
+    }
+
+    .deliver {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 1.75rem 1.5rem;
+      transition: box-shadow 0.22s, border-color 0.22s;
+    }
+
+    .deliver:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+      border-color: var(--gold);
+    }
+
+    .deliver-icon {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .deliver-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+
+    .deliver-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .what-cta { text-align: center; }
+
+    /* ===================== WAITLIST ===================== */
+    .waitlist {
+      background: linear-gradient(150deg, var(--rose) 0%, #4D1529 100%);
+      text-align: center;
+    }
+
+    .waitlist .section-label { color: rgba(253,250,244,0.6); }
+    .waitlist .section-title { color: var(--cream); }
+
+    .waitlist-sub {
+      font-size: 1.05rem;
+      color: rgba(253,250,244,0.7);
+      max-width: 500px;
+      margin: 0 auto 3rem;
+      line-height: 1.75;
+    }
+
+    .form-card {
+      max-width: 580px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group { display: flex; flex-direction: column; }
+    .form-full  { grid-column: 1 / -1; }
+
+    .form-group label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(253,250,244,0.6);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-group label span { opacity: 0.45; font-size: 0.62rem; }
+
+    .form-group input,
+    .form-group select {
+      padding: 0.875rem 1rem;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 2px;
+      color: var(--cream);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .form-group input::placeholder { color: rgba(253,250,244,0.28); }
+    .form-group input:focus,
+    .form-group select:focus { border-color: rgba(255,255,255,0.45); background: rgba(255,255,255,0.12); }
+
+    .form-group select { appearance: none; cursor: pointer; }
+    .form-group select option { background: #5A1A35; color: var(--cream); }
+
+    .form-submit {
+      grid-column: 1 / -1;
+      margin-top: 0.5rem;
+    }
+
+    .form-submit .btn {
+      width: 100%;
+      padding: 1.05rem;
+      font-size: 0.82rem;
+      background: var(--gold);
+      color: var(--text);
+    }
+
+    .form-submit .btn:hover { background: #A8791E; color: #fff; }
+
+    .form-privacy {
+      grid-column: 1 / -1;
+      text-align: center;
+      font-size: 0.73rem;
+      color: rgba(253,250,244,0.35);
+      margin-top: 0.5rem;
+      line-height: 1.6;
+    }
+
+    /* ===================== DISCLAIMER ===================== */
+    .disclaimer { background: var(--cream); padding: 4rem 6%; }
+
+    .disclaimer-box {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 2.5rem 3rem;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      background: var(--warm-white);
+    }
+
+    .disclaimer-title {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .disclaimer-text {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.85;
+    }
+
+    /* ===================== FOOTER ===================== */
+    footer {
+      background: var(--text);
+      text-align: center;
+      padding: 3.5rem 6%;
+    }
+
+    .footer-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      color: var(--cream);
+      margin-bottom: 1.75rem;
+    }
+
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-socials a {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(253,250,244,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-socials a:hover { color: var(--gold); }
+
+    .footer-divider {
+      width: 40px;
+      height: 1px;
+      background: rgba(255,255,255,0.12);
+      margin: 0 auto 2rem;
+    }
+
+    .footer-copy {
+      font-size: 0.76rem;
+      color: rgba(253,250,244,0.3);
+    }
+
+    /* ===================== TOAST ===================== */
+    #toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--text);
+      color: var(--cream);
+      padding: 1rem 2rem;
+      border-radius: 3px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+      z-index: 999;
+      white-space: nowrap;
+    }
+
+    #toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ===================== ANIMATIONS ===================== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.4; transform: scaleY(1); }
+      50%       { opacity: 1;   transform: scaleY(1.15); }
+    }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 900px) {
+      .story-grid  { grid-template-columns: 1fr; gap: 3rem; }
+      .story-accent { display: none; }
+      .pillars     { grid-template-columns: 1fr; }
+      .deliverables { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 1rem 5%; }
+      section { padding: 4rem 5%; }
+      .trust-item { padding: 0.3rem 0.8rem; font-size: 0.65rem; }
+      .form-grid  { grid-template-columns: 1fr; }
+      .form-full  { grid-column: 1; }
+      .form-submit { grid-column: 1; }
+      .form-privacy { grid-column: 1; }
+      .deliverables { grid-template-columns: 1fr; }
+      .optimize-strip { overflow-x: scroll; }
+      .disclaimer-box { padding: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<nav>
+  <a href="#" class="nav-brand">Laryn Breedlove</a>
+  <a href="#waitlist" class="btn btn-primary">Join Waitlist</a>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="top">
+  <p class="hero-eyebrow">Introducing</p>
+  <h1 class="hero-headline">GET THE<br><em>GLOW</em></h1>
+  <p class="hero-sub">Step into your Hot &amp; Healthy Era</p>
+  <p class="hero-tagline">
+    A comprehensive protocol to rebalance your hormones,<br>
+    regain mental clarity, and fully optimize your body.
+  </p>
+  <div class="hero-ctas">
+    <a href="#waitlist" class="btn btn-primary">Join the Waitlist</a>
+    <a href="#story" class="btn btn-outline">My Story</a>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ===================== TRUST BAR ===================== -->
+<div class="trust-bar">
+  <div class="trust-item">Biomedical Scientist</div>
+  <div class="trust-item">Wellness Influencer</div>
+  <div class="trust-item">Stacking Framework</div>
+  <div class="trust-item">Inflammation · Hormones · Cellular Repair</div>
+  <div class="trust-item">3–6 Month Program</div>
+</div>
+
+<!-- ===================== STORY ===================== -->
+<section class="story" id="story">
+  <div class="container-wide">
+    <div class="story-grid">
+
+      <div class="story-text">
+        <span class="section-label">My Story</span>
+        <h2 class="section-title">I thought I knew<br><em>everything</em>&hellip;</h2>
+        <p>As a biomedical scientist and wellness influencer, I believed I had it all figured out — until I faced multiple health crises, two miscarriages, and unexplainable inflammation in my shoulder and jaw. I spent almost a year in doctor's offices, clinics, and emergency rooms.</p>
+        <p>This forced me to rethink everything I knew about health, relearn from scratch, and build a new approach from the ground up. What I discovered changed everything about how I understand the body — and recovery.</p>
+        <p>I developed a <strong>Stacking Framework</strong> — targeting inflammation, hormones, and cellular repair simultaneously through small daily changes that compound into full-body optimization. This is not one fix. It is a system.</p>
+        <a href="#waitlist" class="btn btn-primary">Join the Waitlist</a>
+      </div>
+
+      <div class="story-photo-wrap">
+        <!--
+          PHOTO INSTRUCTIONS:
+          Replace the placeholder below with an <img> tag like this:
+          <img src="../LandingPage/Facetune_21-07-2026-14-58-05.jpg" alt="Laryn Breedlove" class="story-photo">
+          Your photos are in: Desktop/LandingPage/
+        -->
+        <div class="story-photo-placeholder">
+          <span>[ Add your photo here ]<br><small>See comment in code for instructions</small></span>
+        </div>
+        <div class="story-accent"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ORIGIN ===================== -->
+<section class="origin">
+  <div class="container">
+    <span class="section-label">How it began</span>
+    <h2 class="section-title">This is how The Bounce Back<br>Program was <em>Born</em></h2>
+    <blockquote class="origin-quote">
+      "A comprehensive program and a roadmap to guide you in rebalancing your hormones, regaining mental clarity and focus, detoxing and optimizing your body."
+    </blockquote>
+    <a href="#waitlist" class="btn btn-gold">Join the Waitlist</a>
+  </div>
+</section>
+
+<!-- ===================== HOW IT WORKS ===================== -->
+<section class="how" id="program">
+  <div class="container-wide">
+    <span class="section-label">The Framework</span>
+    <h2 class="section-title">How it Works</h2>
+
+    <p class="how-intro">
+      The Bounce Back Program is a three-pillar system and multi-factorial intervention to optimize your body. Each pillar addresses a different dimension: your environment, your body, your mind. These pillars are not sequential — you work on all three simultaneously. The improvement on each pillar compounds, giving results that are much faster than working on each pillar alone.
+    </p>
+
+    <p class="optimize-label-row">We optimize your</p>
+    <div class="optimize-strip">
+      <div class="optimize-cell">
+        <span class="optimize-icon">🏃‍♀️</span>
+        <span class="optimize-name">Movement</span>
+      </div>
+      <div class="optimize-cell">
+        <span class="optimize-icon">🥗</span>
+        <span class="optimize-name">Nutrition</span>
+      </div>
+      <div class="optimize-cell">
+        <span class="optimize-icon">💊</span>
+        <span class="optimize-name">Supplements</span>
+      </div>
+      <div class="optimize-cell">
+        <span class="optimize-icon">🧬</span>
+        <span class="optimize-name">Peptides</span>
+      </div>
+      <div class="optimize-cell">
+        <span class="optimize-icon">🧠</span>
+        <span class="optimize-name">Mindset</span>
+      </div>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <div class="pillar-name">Environment</div>
+        <p class="pillar-desc">Light therapy, grounding, lymphatic drainage, movement, supplements, and peptides — repairing your body at the cellular and endocrine level. Your physical world is medicine.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <div class="pillar-name">Body</div>
+        <p class="pillar-desc">Nutrition, bioindividuality, hormonal support, and targeted cellular repair — fueling every process your body needs to rebuild, rebalance, and thrive.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <div class="pillar-name">Mind</div>
+        <p class="pillar-desc">Grief processing, somatic tools, mindset frameworks, and spiritual alignment — healing the nervous system and psyche at the root, not just the surface.</p>
+      </div>
+    </div>
+
+    <p class="how-duration">We work together for 3–6 months — depending on your starting point, your biology, and your desired outcome.</p>
+    <a href="#waitlist" class="btn btn-gold">Join the Waitlist</a>
+  </div>
+</section>
+
+<!-- ===================== WHAT YOU GET ===================== -->
+<section class="what" id="includes">
+  <div class="container-wide">
+    <span class="section-label">What's Included</span>
+    <h2 class="section-title">Everything you need to<br><em>Bounce Back</em></h2>
+
+    <div class="deliverables">
+      <div class="deliver">
+        <span class="deliver-icon">🎓</span>
+        <div class="deliver-title">Video Lessons</div>
+        <p class="deliver-desc">In-depth lessons guiding you through every phase — I walk you through each step personally, in my own voice.</p>
+      </div>
+      <div class="deliver">
+        <span class="deliver-icon">📅</span>
+        <div class="deliver-title">28-Day Recovery Plan</div>
+        <p class="deliver-desc">A day-by-day protocol for the most efficient recovery — exactly what to do and when, from day one.</p>
+      </div>
+      <div class="deliver">
+        <span class="deliver-icon">💊</span>
+        <div class="deliver-title">Supplements &amp; Peptide Protocol</div>
+        <p class="deliver-desc">Full breakdown of what I used, why, how to source it clean, and exactly how to stack it for maximum effect.</p>
+      </div>
+      <div class="deliver">
+        <span class="deliver-icon">🌿</span>
+        <div class="deliver-title">Herbal Remedies Guide</div>
+        <p class="deliver-desc">A curated list of herbal tools and exactly how to integrate them into your recovery protocol.</p>
+      </div>
+      <div class="deliver">
+        <span class="deliver-icon">🛒</span>
+        <div class="deliver-title">Product List with Affiliate Links</div>
+        <p class="deliver-desc">Every product I use and recommend — vetted for clean ingredients, quality, and effectiveness. No guesswork.</p>
+      </div>
+      <div class="deliver">
+        <span class="deliver-icon">🧘‍♀️</span>
+        <div class="deliver-title">Mental &amp; Emotional Recovery</div>
+        <p class="deliver-desc">Somatic tools, grief frameworks, movement therapy, and spiritual practices for full healing — not just physical.</p>
+      </div>
+    </div>
+
+    <div class="what-cta">
+      <a href="#waitlist" class="btn btn-primary">Join the Waitlist</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WAITLIST FORM ===================== -->
+<section class="waitlist" id="waitlist">
+  <div class="container">
+    <span class="section-label">Limited Spots</span>
+    <h2 class="section-title">Join The Glow Club</h2>
+    <p class="waitlist-sub">Be the first to know when The Bounce Back Program opens enrollment — and secure your early access.</p>
+
+    <!--
+      FORM SETUP:
+      1. Go to formspree.io and create a free account
+      2. Create a new form and copy your endpoint URL
+      3. Replace "https://formspree.io/f/YOUR_FORM_ID" below with your endpoint
+    -->
+    <div class="form-card">
+      <form id="waitlist-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="first_name">First Name <span>(required)</span></label>
+            <input type="text" id="first_name" name="first_name" placeholder="First name" required autocomplete="given-name">
+          </div>
+          <div class="form-group">
+            <label for="last_name">Last Name <span>(required)</span></label>
+            <input type="text" id="last_name" name="last_name" placeholder="Last name" required autocomplete="family-name">
+          </div>
+          <div class="form-group form-full">
+            <label for="email">Email <span>(required)</span></label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email">
+          </div>
+          <div class="form-group form-full">
+            <label for="phone">Phone <span>(required)</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required autocomplete="tel">
+          </div>
+          <div class="form-group form-full">
+            <label for="goal">What's your goal?</label>
+            <select id="goal" name="goal">
+              <option value="" disabled selected>Select your goal</option>
+              <option value="glow">Get my glow back!</option>
+              <option value="weight_loss">Weight loss</option>
+              <option value="recovery">Recovery</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn">Submit — Join the Waitlist</button>
+          </div>
+          <p class="form-privacy">Your information is private and will never be shared. Unsubscribe at any time.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DISCLAIMER ===================== -->
+<section class="disclaimer">
+  <div class="disclaimer-box">
+    <p class="disclaimer-title">Disclaimer</p>
+    <p class="disclaimer-text">
+      The Bounce Back Program is for educational and informational purposes only. The content shared by Laryn Breedlove is based on personal lived experience combined with personal research in physiology, nutrition, endocrinology, and mental health — it is not intended as medical advice, diagnosis, or treatment. Individual outcomes vary based on numerous factors including biology, starting point, consistency, and health history. No specific results, recovery timelines, or health outcomes are guaranteed. Nothing in this program replaces the guidance of a qualified healthcare provider. Always consult with a licensed medical professional before making changes to your health, supplement, or lifestyle protocol — particularly in relation to pregnancy, hormonal health, or miscarriage recovery.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <p class="footer-name">LARYN BREEDLOVE</p>
+  <div class="footer-socials">
+    <!-- Replace # with your actual profile URLs -->
+    <a href="#" target="_blank" rel="noopener">Instagram</a>
+    <a href="#" target="_blank" rel="noopener">TikTok</a>
+    <a href="#" target="_blank" rel="noopener">X (Twitter)</a>
+  </div>
+  <div class="footer-divider"></div>
+  <p class="footer-copy">&copy; 2025 Laryn Breedlove. All rights reserved.</p>
+</footer>
+
+<!-- TOAST NOTIFICATION -->
+<div id="toast"></div>
+
+<script>
+  // --- Form handling ---
+  const form = document.getElementById('waitlist-form');
+  const toast = document.getElementById('toast');
+
+  function showToast(msg, duration = 4000) {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), duration);
+  }
+
+  form.addEventListener('submit', async (e) => {
+    const action = form.getAttribute('action');
+
+    if (action.includes('YOUR_FORM_ID')) {
+      e.preventDefault();
+      showToast('⚙️  Form not yet connected — see code comments for setup instructions.', 5000);
+      return;
+    }
+
+    e.preventDefault();
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch(action, {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' }
+      });
+
+      if (res.ok) {
+        form.reset();
+        showToast('✓ You\'re on the list! We\'ll be in touch.');
+        form.closest('section').querySelector('.waitlist-sub').textContent =
+          "You're on the list. We'll be in touch with early access details.";
+      } else {
+        showToast('Something went wrong. Please try again.');
+      }
+    } catch {
+      showToast('Something went wrong. Please try again.');
+    }
+  });
+
+  // --- Active nav highlight ---
+  const sections = document.querySelectorAll('section[id]');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+      }
+    });
+  }, { threshold: 0.3 });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
