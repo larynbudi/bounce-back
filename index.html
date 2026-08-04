@@ -7,31 +7,33 @@
   <meta name="description" content="A comprehensive program and roadmap to rebalance your hormones, regain mental clarity, and optimize your body. Join the waitlist.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Josefin+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --sage:     oklch(88% 0.035 140);
-      --sage-dk:  oklch(82% 0.035 140);
-      --sage-xdk: oklch(72% 0.055 140);
-      --mustard:  oklch(78% 0.15 85);
-      --mustard-dk: oklch(65% 0.15 85);
-      --red:      oklch(55% 0.2 25);
-      --red-dk:   oklch(45% 0.2 25);
-      --blue:     oklch(85% 0.06 235);
-      --black:    #111111;
-      --white:    #FFFFFF;
-      --off-white: #F8F8F6;
+      --cream:      oklch(97% 0.012 60);
+      --cream-dk:   oklch(93% 0.02 55);
+      --cream-xdk:  oklch(90% 0.02 50);
+      --ink:        oklch(25% 0.02 40);
+      --ink-soft:   oklch(40% 0.02 40);
+      --ink-muted:  oklch(55% 0.015 40);
+      --terra:      oklch(75% 0.12 30);
+      --terra-dk:   oklch(63% 0.12 30);
+      --gold:       oklch(80% 0.09 75);
+      --gold-dk:    oklch(68% 0.09 75);
+      --blush:      oklch(90% 0.02 50);
+      --border:     oklch(88% 0.015 55);
     }
 
     html { scroll-behavior: smooth; font-size: 16px; }
 
     body {
-      font-family: 'Josefin Sans', sans-serif;
-      background: var(--sage);
-      color: var(--black);
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
       -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
     }
 
     /* ==================== NAV ==================== */
@@ -42,61 +44,71 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 6%;
-      background: var(--black);
+      padding: 1.1rem 6%;
+      background: rgba(250, 246, 240, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
     }
 
     .nav-brand {
-      font-family: 'Anton', sans-serif;
-      font-size: 1.1rem;
-      letter-spacing: 0.08em;
-      color: var(--white);
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--ink);
       text-decoration: none;
     }
 
+    /* ==================== BUTTONS ==================== */
     .btn {
       display: inline-block;
-      padding: 0.7rem 1.8rem;
-      font-family: 'Josefin Sans', sans-serif;
+      padding: 0.8rem 2.2rem;
+      font-family: 'Jost', sans-serif;
       font-size: 0.75rem;
-      font-weight: 700;
+      font-weight: 600;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       text-decoration: none;
       cursor: pointer;
       border: none;
-      transition: all 0.18s ease;
+      transition: all 0.2s ease;
       white-space: nowrap;
     }
 
-    .btn-mustard  { background: var(--mustard); color: var(--black); }
-    .btn-mustard:hover { background: var(--mustard-dk); }
+    .btn-terra     { background: var(--terra); color: #fff; }
+    .btn-terra:hover { background: var(--terra-dk); }
 
-    .btn-black    { background: var(--black); color: var(--white); }
-    .btn-black:hover { background: #333; }
+    .btn-gold      { background: var(--gold); color: var(--ink); }
+    .btn-gold:hover { background: var(--gold-dk); color: #fff; }
 
-    .btn-red      { background: var(--red); color: var(--white); }
-    .btn-red:hover { background: var(--red-dk); }
+    .btn-ink       { background: var(--ink); color: var(--cream); }
+    .btn-ink:hover { background: oklch(35% 0.02 40); }
 
-    .btn-white    { background: var(--white); color: var(--black); }
-    .btn-white:hover { background: var(--off-white); }
-
-    .btn-outline-white {
+    .btn-outline   {
       background: transparent;
-      color: var(--white);
-      border: 2px solid var(--white);
+      color: var(--ink);
+      border: 1.5px solid var(--ink);
     }
-    .btn-outline-white:hover { background: var(--white); color: var(--black); }
+    .btn-outline:hover { background: var(--ink); color: var(--cream); }
+
+    .btn-outline-cream {
+      background: transparent;
+      color: var(--cream);
+      border: 1.5px solid rgba(250,246,240,0.6);
+    }
+    .btn-outline-cream:hover { background: var(--cream); color: var(--ink); }
 
     /* ==================== HERO ==================== */
     .hero {
       min-height: 100vh;
-      background: var(--sage);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      padding: 8rem 6% 5rem;
-      gap: 4rem;
+      text-align: center;
+      padding: 10rem 6% 7rem;
+      background: var(--cream);
       position: relative;
       overflow: hidden;
     }
@@ -104,219 +116,187 @@
     .hero::before {
       content: '';
       position: absolute;
-      bottom: 0; right: 0;
-      width: 45%;
-      height: 40%;
-      background: var(--mustard);
-      opacity: 0.18;
-      clip-path: ellipse(80% 70% at 100% 100%);
+      top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 20% 20%, oklch(90% 0.04 30 / 0.25) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 80%, oklch(88% 0.06 75 / 0.2) 0%, transparent 60%);
+      pointer-events: none;
     }
 
-    .hero-left { position: relative; z-index: 1; }
-
-    .hero-kicker {
+    .hero-eyebrow {
       font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.3em;
+      font-weight: 500;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 1.2rem;
-      display: block;
+      color: var(--terra);
+      margin-bottom: 1.5rem;
+      position: relative;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.1s ease forwards;
     }
 
     .hero-headline {
-      font-family: 'Anton', sans-serif;
-      font-size: clamp(4.5rem, 10vw, 8rem);
-      line-height: 0.92;
-      color: var(--black);
-      margin-bottom: 1.2rem;
+      font-family: 'Libre Baskerville', serif;
+      font-size: clamp(3.5rem, 9vw, 7rem);
+      font-weight: 400;
+      line-height: 1.0;
+      color: var(--ink);
+      margin-bottom: 1rem;
+      position: relative;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.25s ease forwards;
     }
 
-    .hero-headline .glow { color: var(--mustard); }
+    .hero-headline em {
+      font-style: italic;
+      color: var(--terra);
+    }
 
     .hero-sub {
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--black);
-      margin-bottom: 0.5rem;
+      font-family: 'Libre Baskerville', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--ink-muted);
+      margin-bottom: 2rem;
+      position: relative;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.38s ease forwards;
     }
 
-    .hero-sub .hot { color: var(--red); }
-
     .hero-tagline {
-      font-size: 0.95rem;
-      font-weight: 400;
-      color: oklch(30% 0 0);
-      line-height: 1.7;
-      max-width: 460px;
-      margin-bottom: 2.5rem;
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--ink-soft);
+      max-width: 520px;
+      line-height: 1.8;
+      margin-bottom: 3rem;
+      position: relative;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.5s ease forwards;
     }
 
     .hero-ctas {
       display: flex;
-      gap: 0.75rem;
+      gap: 1rem;
       flex-wrap: wrap;
-    }
-
-    .hero-right {
-      position: relative;
-    }
-
-    .hero-photo-wrap {
-      position: relative;
-      aspect-ratio: 3/4;
-      max-height: 85vh;
-    }
-
-    .hero-photo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .hero-photo-placeholder {
-      width: 100%;
-      height: 100%;
-      background: var(--sage-dk);
-      display: flex;
-      align-items: center;
       justify-content: center;
+      position: relative;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.62s ease forwards;
     }
 
-    .hero-photo-placeholder span {
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: oklch(45% 0.03 140);
-      text-align: center;
-      padding: 1rem;
-    }
-
-    .hero-badge {
+    .hero-scroll {
       position: absolute;
-      bottom: -1.5rem;
-      left: -2rem;
-      background: var(--mustard);
-      color: var(--black);
-      padding: 1.25rem 1.5rem;
-      font-family: 'Anton', sans-serif;
-      font-size: 1rem;
-      letter-spacing: 0.06em;
-      line-height: 1.2;
-      max-width: 200px;
-    }
-
-    /* ==================== MARQUEE ==================== */
-    .marquee-wrap {
-      background: var(--black);
-      overflow: hidden;
-      padding: 1rem 0;
-      border-top: 3px solid var(--mustard);
-      border-bottom: 3px solid var(--mustard);
-    }
-
-    .marquee-track {
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
-      gap: 0;
-      white-space: nowrap;
-      animation: marquee 22s linear infinite;
-    }
-
-    .marquee-track:hover { animation-play-state: paused; }
-
-    .marquee-item {
-      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 1.5rem;
-      padding: 0 2rem;
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.22em;
+      gap: 0.5rem;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.9s ease forwards;
+    }
+
+    .hero-scroll span {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--white);
-      flex-shrink: 0;
+      color: var(--ink-muted);
     }
 
-    .marquee-dot {
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      background: var(--mustard);
-      border-radius: 50%;
-      flex-shrink: 0;
+    .scroll-line {
+      width: 1px;
+      height: 36px;
+      background: linear-gradient(to bottom, var(--terra), transparent);
+      animation: pulse 2s ease-in-out infinite;
     }
 
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
+    /* ==================== TRUST BAR ==================== */
+    .trust-bar {
+      background: var(--ink);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 1rem 6%;
+      gap: 0;
     }
+
+    .trust-item {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(250,246,240,0.6);
+      padding: 0.25rem 1.5rem;
+      border-right: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .trust-item:last-child { border-right: none; }
 
     /* ==================== LAYOUT ==================== */
     .container      { max-width: 960px; margin: 0 auto; }
     .container-wide { max-width: 1200px; margin: 0 auto; }
-
     section { padding: 6rem 6%; }
 
     .section-label {
       font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.28em;
+      font-weight: 500;
+      letter-spacing: 0.26em;
       text-transform: uppercase;
-      color: var(--red);
+      color: var(--terra);
       display: block;
       margin-bottom: 1rem;
     }
 
-    .section-label-light { color: var(--mustard); }
+    .section-label-gold { color: var(--gold-dk); }
 
     .section-title {
-      font-family: 'Anton', sans-serif;
-      font-size: clamp(2.4rem, 6vw, 4.5rem);
-      line-height: 0.95;
-      color: var(--black);
+      font-family: 'Libre Baskerville', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--ink);
       margin-bottom: 1.5rem;
     }
 
-    .section-title .accent { color: var(--mustard); }
-    .section-title .accent-red { color: var(--red); }
-    .section-title-white { color: var(--white); }
+    .section-title em { font-style: italic; color: var(--terra); }
+    .section-title-light { color: var(--cream); }
+    .section-title-light em { color: var(--gold); }
 
     /* ==================== STORY ==================== */
-    .story { background: var(--white); }
+    .story { background: var(--blush); }
 
     .story-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 5rem;
       align-items: center;
     }
 
     .story-text p {
-      font-size: 0.97rem;
-      font-weight: 400;
-      color: oklch(28% 0.01 0);
-      line-height: 1.85;
-      margin-bottom: 1.25rem;
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--ink-soft);
+      line-height: 1.9;
+      margin-bottom: 1.4rem;
     }
 
     .story-pull {
-      border-left: 4px solid var(--mustard);
-      padding-left: 1.25rem;
-      font-size: 1.05rem;
-      font-weight: 600;
-      line-height: 1.5;
-      color: var(--black);
-      margin: 2rem 0;
+      font-family: 'Libre Baskerville', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--ink);
+      line-height: 1.6;
+      border-left: 3px solid var(--terra);
+      padding-left: 1.5rem;
+      margin: 2rem 0 2.5rem;
     }
 
-    .story-photo-wrap {
-      position: relative;
-    }
+    .story-photo-wrap { position: relative; }
 
     .story-photo {
       width: 100%;
@@ -328,7 +308,7 @@
     .story-photo-placeholder {
       width: 100%;
       aspect-ratio: 3/4;
-      background: var(--sage-dk);
+      background: var(--cream-dk);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -336,89 +316,87 @@
 
     .story-photo-placeholder span {
       font-size: 0.8rem;
-      font-weight: 600;
+      font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: oklch(45% 0.03 140);
+      color: var(--ink-muted);
       text-align: center;
       padding: 1rem;
     }
 
-    .story-tag {
+    .story-accent {
       position: absolute;
-      top: 2rem;
-      right: -1.5rem;
-      background: var(--red);
-      color: var(--white);
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      padding: 0.5rem 1rem;
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
+      bottom: -1.5rem;
+      left: -1.5rem;
+      width: 65%;
+      height: 65%;
+      border: 1.5px solid var(--terra);
+      z-index: -1;
+      opacity: 0.4;
     }
 
-    /* ==================== BORN ==================== */
-    .born {
-      background: var(--black);
+    /* ==================== ORIGIN ==================== */
+    .origin {
+      background: var(--ink);
       text-align: center;
     }
 
-    .born .container { max-width: 760px; }
+    .origin .container { max-width: 720px; }
 
-    .born-quote {
-      font-family: 'Anton', sans-serif;
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      line-height: 1.1;
-      color: var(--white);
+    .origin-quote {
+      font-family: 'Libre Baskerville', serif;
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      font-style: italic;
+      font-weight: 400;
+      color: rgba(250,246,240,0.85);
+      line-height: 1.6;
       margin: 2rem 0 3rem;
     }
 
-    .born-quote .highlight { color: var(--mustard); }
+    .origin-quote em { color: var(--gold); font-style: normal; }
 
     /* ==================== HOW IT WORKS ==================== */
-    .how { background: var(--black); padding-top: 0; }
+    .how { background: var(--cream-dk); }
 
     .how-intro {
-      font-size: 0.97rem;
-      font-weight: 400;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.85;
-      max-width: 680px;
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--ink-soft);
+      line-height: 1.9;
+      max-width: 660px;
       margin-bottom: 4rem;
     }
 
     .optimize-row {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      border: 2px solid var(--mustard);
+      gap: 0;
+      border: 1px solid var(--border);
       margin-bottom: 4rem;
-      overflow: hidden;
     }
 
     .optimize-cell {
       padding: 2rem 1rem;
       text-align: center;
-      border-right: 1px solid rgba(255,255,255,0.1);
+      border-right: 1px solid var(--border);
       transition: background 0.2s;
     }
 
     .optimize-cell:last-child { border-right: none; }
-    .optimize-cell:hover { background: rgba(255,255,255,0.04); }
+    .optimize-cell:hover { background: var(--cream); }
 
     .optimize-icon {
-      font-size: 1.75rem;
+      font-size: 1.6rem;
       display: block;
       margin-bottom: 0.75rem;
     }
 
     .optimize-name {
       font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
+      font-weight: 600;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--mustard);
+      color: var(--terra);
     }
 
     .pillars {
@@ -429,57 +407,52 @@
     }
 
     .pillar {
-      border: 2px solid rgba(255,255,255,0.1);
+      background: var(--cream);
+      border: 1px solid var(--border);
       padding: 2.5rem 2rem;
-      transition: border-color 0.2s;
-      position: relative;
-      overflow: hidden;
+      transition: box-shadow 0.2s, border-color 0.2s;
     }
 
-    .pillar::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--mustard);
+    .pillar:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+      border-color: var(--terra);
     }
-
-    .pillar:hover { border-color: var(--mustard); }
 
     .pillar-num {
-      font-family: 'Anton', sans-serif;
-      font-size: 5rem;
-      color: var(--mustard);
-      opacity: 0.2;
+      font-family: 'Libre Baskerville', serif;
+      font-size: 3.5rem;
+      font-style: italic;
+      color: var(--terra);
+      opacity: 0.25;
       line-height: 1;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
     }
 
     .pillar-name {
-      font-family: 'Anton', sans-serif;
-      font-size: 1.8rem;
-      color: var(--white);
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--ink);
       margin-bottom: 0.75rem;
     }
 
     .pillar-desc {
-      font-size: 0.88rem;
-      font-weight: 400;
-      color: rgba(255,255,255,0.55);
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--ink-soft);
       line-height: 1.75;
     }
 
     .how-duration {
-      font-size: 0.88rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.45);
+      font-family: 'Libre Baskerville', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--ink-muted);
       margin-bottom: 2.5rem;
     }
 
     /* ==================== WHAT YOU GET ==================== */
-    .what { background: var(--sage); }
+    .what { background: var(--cream); }
 
     .deliverables {
       display: grid;
@@ -489,78 +462,80 @@
     }
 
     .deliver {
-      background: var(--white);
+      background: var(--blush);
+      border: 1px solid var(--border);
       padding: 2rem 1.75rem;
-      border-top: 4px solid var(--mustard);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: box-shadow 0.2s, border-color 0.2s;
     }
 
     .deliver:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.07);
+      border-color: var(--terra);
     }
 
     .deliver-icon {
-      font-size: 1.75rem;
+      font-size: 1.6rem;
       display: block;
       margin-bottom: 1rem;
     }
 
     .deliver-title {
-      font-family: 'Anton', sans-serif;
-      font-size: 1.1rem;
-      color: var(--black);
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--ink);
       margin-bottom: 0.5rem;
-      letter-spacing: 0.02em;
     }
 
     .deliver-desc {
       font-size: 0.88rem;
-      font-weight: 400;
-      color: oklch(38% 0.01 0);
+      font-weight: 300;
+      color: var(--ink-soft);
       line-height: 1.7;
     }
 
     .what-cta { text-align: center; }
 
-    /* ==================== LEVEL UP BANNER ==================== */
-    .levelup {
-      background: var(--mustard);
+    /* ==================== CTA BAND ==================== */
+    .cta-band {
+      background: var(--terra);
       text-align: center;
       padding: 5rem 6%;
     }
 
-    .levelup-headline {
-      font-family: 'Anton', sans-serif;
-      font-size: clamp(2.5rem, 7vw, 5.5rem);
-      line-height: 0.95;
-      color: var(--black);
-      margin-bottom: 1.25rem;
+    .cta-band-headline {
+      font-family: 'Libre Baskerville', serif;
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: #fff;
+      margin-bottom: 1rem;
     }
 
-    .levelup-sub {
-      font-size: 0.9rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: oklch(28% 0 0);
-      margin-bottom: 2.5rem;
-      max-width: 520px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.6;
+    .cta-band-headline em {
+      font-style: italic;
+      color: oklch(95% 0.04 75);
+    }
+
+    .cta-band-sub {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.75);
+      max-width: 460px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.75;
     }
 
     /* ==================== WAITLIST ==================== */
-    .waitlist { background: var(--black); text-align: center; }
+    .waitlist { background: var(--ink); text-align: center; }
 
     .waitlist-sub {
-      font-size: 0.95rem;
-      font-weight: 400;
-      color: rgba(255,255,255,0.6);
-      max-width: 480px;
+      font-size: 0.97rem;
+      font-weight: 300;
+      color: rgba(250,246,240,0.6);
+      max-width: 460px;
       margin: 0 auto 3rem;
-      line-height: 1.75;
+      line-height: 1.8;
     }
 
     .form-card {
@@ -580,98 +555,96 @@
 
     .form-group label {
       font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
+      font-weight: 600;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
+      color: rgba(250,246,240,0.5);
       margin-bottom: 0.4rem;
     }
 
     .form-group input,
     .form-group select {
       padding: 0.9rem 1rem;
-      background: rgba(255,255,255,0.07);
-      border: 1.5px solid rgba(255,255,255,0.15);
-      color: var(--white);
-      font-family: 'Josefin Sans', sans-serif;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: var(--cream);
+      font-family: 'Jost', sans-serif;
       font-size: 0.95rem;
-      font-weight: 400;
+      font-weight: 300;
       outline: none;
       transition: border-color 0.2s, background 0.2s;
     }
 
-    .form-group input::placeholder { color: rgba(255,255,255,0.25); }
+    .form-group input::placeholder { color: rgba(250,246,240,0.25); }
     .form-group input:focus,
     .form-group select:focus {
-      border-color: var(--mustard);
-      background: rgba(255,255,255,0.1);
+      border-color: var(--terra);
+      background: rgba(255,255,255,0.09);
     }
 
     .form-group select { appearance: none; cursor: pointer; }
-    .form-group select option { background: #222; color: var(--white); }
+    .form-group select option { background: #2C2320; color: var(--cream); }
 
     .form-submit { grid-column: 1 / -1; margin-top: 0.5rem; }
     .form-submit .btn {
       width: 100%;
       padding: 1.1rem;
-      font-size: 0.82rem;
-      background: var(--mustard);
-      color: var(--black);
+      font-size: 0.8rem;
+      background: var(--terra);
+      color: #fff;
     }
-    .form-submit .btn:hover { background: var(--mustard-dk); }
+    .form-submit .btn:hover { background: var(--terra-dk); }
 
     .form-privacy {
       grid-column: 1 / -1;
       text-align: center;
       font-size: 0.72rem;
-      font-weight: 400;
-      color: rgba(255,255,255,0.28);
+      font-weight: 300;
+      color: rgba(250,246,240,0.28);
       margin-top: 0.75rem;
       line-height: 1.6;
     }
 
     /* ==================== DISCLAIMER ==================== */
-    .disclaimer {
-      background: var(--sage-dk);
-      padding: 4rem 6%;
-    }
+    .disclaimer { background: var(--cream-xdk); padding: 4rem 6%; }
 
     .disclaimer-box {
       max-width: 760px;
       margin: 0 auto;
-      padding: 2.5rem;
-      border: 1.5px solid var(--sage-xdk);
-      background: var(--sage);
+      padding: 2.5rem 3rem;
+      border: 1px solid var(--border);
+      background: var(--cream);
     }
 
     .disclaimer-title {
       font-size: 0.68rem;
-      font-weight: 700;
+      font-weight: 600;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: oklch(40% 0.03 140);
+      color: var(--ink-muted);
       margin-bottom: 1rem;
     }
 
     .disclaimer-text {
-      font-size: 0.84rem;
-      font-weight: 400;
-      color: oklch(35% 0.02 140);
-      line-height: 1.85;
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--ink-soft);
+      line-height: 1.9;
     }
 
     /* ==================== FOOTER ==================== */
     footer {
-      background: var(--black);
+      background: var(--ink);
       text-align: center;
       padding: 3.5rem 6%;
     }
 
     .footer-name {
-      font-family: 'Anton', sans-serif;
-      font-size: 1.6rem;
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
       letter-spacing: 0.1em;
-      color: var(--white);
+      color: var(--cream);
       margin-bottom: 1.75rem;
     }
 
@@ -684,27 +657,28 @@
 
     .footer-socials a {
       font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
+      font-weight: 500;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.45);
+      color: rgba(250,246,240,0.4);
       text-decoration: none;
       transition: color 0.2s;
     }
 
-    .footer-socials a:hover { color: var(--mustard); }
+    .footer-socials a:hover { color: var(--terra); }
 
     .footer-line {
-      width: 40px;
-      height: 2px;
-      background: var(--mustard);
+      width: 36px;
+      height: 1px;
+      background: var(--terra);
       margin: 0 auto 2rem;
+      opacity: 0.5;
     }
 
     .footer-copy {
       font-size: 0.74rem;
-      font-weight: 400;
-      color: rgba(255,255,255,0.25);
+      font-weight: 300;
+      color: rgba(250,246,240,0.22);
     }
 
     /* ==================== TOAST ==================== */
@@ -713,44 +687,48 @@
       bottom: 2rem;
       left: 50%;
       transform: translateX(-50%) translateY(20px);
-      background: var(--mustard);
-      color: var(--black);
+      background: var(--terra);
+      color: #fff;
       padding: 1rem 2rem;
       font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 0.06em;
       opacity: 0;
       pointer-events: none;
       transition: all 0.3s ease;
       z-index: 999;
       white-space: nowrap;
     }
-
     #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* ==================== ANIMATIONS ==================== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; }
+      50%       { opacity: 1; }
+    }
 
     /* ==================== RESPONSIVE ==================== */
     @media (max-width: 900px) {
-      .hero          { grid-template-columns: 1fr; text-align: center; }
-      .hero-ctas     { justify-content: center; }
-      .hero-tagline  { margin: 0 auto 2.5rem; }
-      .hero-badge    { display: none; }
-      .hero-right    { display: none; }
-      .story-grid    { grid-template-columns: 1fr; gap: 2.5rem; }
-      .story-tag     { display: none; }
-      .pillars       { grid-template-columns: 1fr; }
-      .deliverables  { grid-template-columns: 1fr 1fr; }
-      .optimize-row  { grid-template-columns: repeat(3, 1fr); }
+      .story-grid  { grid-template-columns: 1fr; gap: 2.5rem; }
+      .story-accent { display: none; }
+      .pillars     { grid-template-columns: 1fr; }
+      .deliverables { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 600px) {
       nav { padding: 0.9rem 5%; }
       section { padding: 4rem 5%; }
-      .optimize-row  { grid-template-columns: repeat(2, 1fr); overflow: hidden; }
-      .deliverables  { grid-template-columns: 1fr; }
-      .form-grid     { grid-template-columns: 1fr; }
+      .trust-item { padding: 0.3rem 0.8rem; font-size: 0.64rem; }
+      .optimize-row { grid-template-columns: repeat(3, 1fr); overflow: hidden; }
+      .deliverables { grid-template-columns: 1fr; }
+      .form-grid    { grid-template-columns: 1fr; }
       .form-full, .form-submit, .form-privacy { grid-column: 1; }
-      .disclaimer-box { padding: 1.5rem; }
+      .disclaimer-box { padding: 1.75rem; }
     }
   </style>
 </head>
@@ -758,64 +736,36 @@
 
 <!-- ==================== NAV ==================== -->
 <nav>
-  <a href="#" class="nav-brand">LARYN BREEDLOVE</a>
-  <a href="#waitlist" class="btn btn-mustard">Join Waitlist</a>
+  <a href="#" class="nav-brand">Laryn Breedlove</a>
+  <a href="#waitlist" class="btn btn-terra">Join Waitlist</a>
 </nav>
 
 <!-- ==================== HERO ==================== -->
 <section class="hero" id="top">
-  <div class="hero-left">
-    <span class="hero-kicker">Introducing The Bounce Back Program</span>
-    <h1 class="hero-headline">
-      GET THE<br>
-      <span class="glow">GLOW</span>
-    </h1>
-    <p class="hero-sub">Step into your <span class="hot">Hot</span> &amp; Healthy Era</p>
-    <p class="hero-tagline">
-      A comprehensive protocol to rebalance your hormones, regain mental clarity, and fully optimize your body. Built from lived experience and deep research.
-    </p>
-    <div class="hero-ctas">
-      <a href="#waitlist" class="btn btn-black">Join the Waitlist</a>
-      <a href="#story" class="btn btn-outline-white" style="border-color: var(--black); color: var(--black);">My Story</a>
-    </div>
+  <span class="hero-eyebrow">Introducing The Bounce Back Program</span>
+  <h1 class="hero-headline">Get The <em>Glow</em></h1>
+  <p class="hero-sub">Step into your Hot &amp; Healthy Era</p>
+  <p class="hero-tagline">
+    A comprehensive protocol to rebalance your hormones, regain mental clarity,
+    and fully optimize your body. Built from lived experience and deep research.
+  </p>
+  <div class="hero-ctas">
+    <a href="#waitlist" class="btn btn-terra">Join the Waitlist</a>
+    <a href="#story" class="btn btn-outline">My Story</a>
   </div>
-
-  <div class="hero-right">
-    <div class="hero-photo-wrap">
-      <!--
-        PHOTO: Replace with your image like this:
-        <img src="LandingPage/Facetune_21-07-2026-14-58-05.jpg" alt="Laryn Breedlove" class="hero-photo">
-        Photos are in: Desktop/bounce-back/LandingPage/
-      -->
-      <div class="hero-photo-placeholder">
-        <span>[ Add your photo here ]</span>
-      </div>
-      <div class="hero-badge">THE BOUNCE BACK PROGRAM</div>
-    </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
   </div>
 </section>
 
-<!-- ==================== MARQUEE ==================== -->
-<div class="marquee-wrap">
-  <div class="marquee-track">
-    <!-- Items duplicated for seamless loop -->
-    <div class="marquee-item"><span class="marquee-dot"></span> Biomedical Scientist</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Hormone Rebalancing</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Inflammation Protocol</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Cellular Repair</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Stacking Framework</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> 3-Pillar System</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Mental Clarity</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Body Optimization</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Biomedical Scientist</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Hormone Rebalancing</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Inflammation Protocol</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Cellular Repair</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Stacking Framework</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> 3-Pillar System</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Mental Clarity</div>
-    <div class="marquee-item"><span class="marquee-dot"></span> Body Optimization</div>
-  </div>
+<!-- ==================== TRUST BAR ==================== -->
+<div class="trust-bar">
+  <div class="trust-item">Biomedical Scientist</div>
+  <div class="trust-item">Wellness Influencer</div>
+  <div class="trust-item">Stacking Framework</div>
+  <div class="trust-item">Inflammation · Hormones · Cellular Repair</div>
+  <div class="trust-item">3–6 Month Program</div>
 </div>
 
 <!-- ==================== STORY ==================== -->
@@ -824,51 +774,53 @@
     <div class="story-grid">
       <div class="story-text">
         <span class="section-label">My Story</span>
-        <h2 class="section-title">I THOUGHT I KNEW<br><span class="accent-red">EVERYTHING</span></h2>
+        <h2 class="section-title">I thought I knew<br><em>everything…</em></h2>
         <p>As a biomedical scientist and wellness influencer, I believed I had it all figured out — until I faced multiple health crises, two miscarriages, and unexplainable inflammation in my shoulder and jaw. I spent almost a year in doctor's offices, clinics, and emergency rooms.</p>
         <p>This forced me to rethink everything I knew about health, relearn from scratch, and build a new approach from the ground up. What I discovered changed everything.</p>
         <blockquote class="story-pull">
-          I developed a Stacking Framework — targeting inflammation, hormones, and cellular repair simultaneously. This is not one fix. It is a system.
+          "I developed a Stacking Framework — targeting inflammation, hormones, and cellular repair simultaneously. This is not one fix. It is a system."
         </blockquote>
-        <a href="#waitlist" class="btn btn-black">Join the Waitlist</a>
+        <a href="#waitlist" class="btn btn-terra">Join the Waitlist</a>
       </div>
-
       <div class="story-photo-wrap">
         <!--
           Replace placeholder with your photo:
           <img src="LandingPage/Facetune_21-07-2026-14-58-05.jpg" alt="Laryn Breedlove" class="story-photo">
+          Photos are in: Desktop/bounce-back/LandingPage/
         -->
         <div class="story-photo-placeholder">
           <span>[ Add your photo here ]</span>
         </div>
-        <div class="story-tag">Bounce Back</div>
+        <div class="story-accent"></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== BORN ==================== -->
-<section class="born">
+<!-- ==================== ORIGIN ==================== -->
+<section class="origin">
   <div class="container">
-    <span class="section-label section-label-light">How It Began</span>
-    <div class="born-quote">
-      "A comprehensive program and roadmap to guide you in <span class="highlight">rebalancing your hormones</span>, regaining mental clarity, and optimizing your body."
-    </div>
-    <a href="#waitlist" class="btn btn-mustard">Join the Waitlist</a>
+    <span class="section-label" style="color: rgba(250,246,240,0.5);">How It Began</span>
+    <h2 class="section-title section-title-light">
+      This is how The Bounce Back<br>Program was <em>Born</em>
+    </h2>
+    <p class="origin-quote">
+      "A comprehensive program and roadmap to guide you in <em>rebalancing your hormones</em>, regaining mental clarity, and optimizing your body."
+    </p>
+    <a href="#waitlist" class="btn btn-gold">Join the Waitlist</a>
   </div>
 </section>
 
 <!-- ==================== HOW IT WORKS ==================== -->
 <section class="how" id="program">
   <div class="container-wide">
-    <span class="section-label section-label-light">The Framework</span>
-    <h2 class="section-title section-title-white">HOW IT<br><span class="accent">WORKS</span></h2>
-
+    <span class="section-label">The Framework</span>
+    <h2 class="section-title">How it <em>Works</em></h2>
     <p class="how-intro">
       The Bounce Back Program is a three-pillar system and multi-factorial intervention to optimize your body. These pillars are not sequential — you work on all three simultaneously. The improvement on each pillar compounds, giving results far faster than working on each pillar alone.
     </p>
 
-    <p class="section-label section-label-light" style="margin-bottom: 1rem;">We Optimize Your</p>
+    <span class="section-label" style="margin-bottom: 1rem;">We Optimize Your</span>
     <div class="optimize-row">
       <div class="optimize-cell">
         <span class="optimize-icon">🏃‍♀️</span>
@@ -895,23 +847,23 @@
     <div class="pillars">
       <div class="pillar">
         <div class="pillar-num">01</div>
-        <div class="pillar-name">ENVIRONMENT</div>
-        <p class="pillar-desc">Light therapy, grounding, lymphatic drainage, movement, supplements, and peptides — repairing your body at the cellular and endocrine level. Your physical world is medicine.</p>
+        <div class="pillar-name">Environment</div>
+        <p class="pillar-desc">Light therapy, grounding, lymphatic drainage, movement, supplements, and peptides — repairing your body at the cellular and endocrine level.</p>
       </div>
       <div class="pillar">
         <div class="pillar-num">02</div>
-        <div class="pillar-name">BODY</div>
-        <p class="pillar-desc">Nutrition, bioindividuality, hormonal support, and targeted cellular repair — fueling every process your body needs to rebuild, rebalance, and thrive.</p>
+        <div class="pillar-name">Body</div>
+        <p class="pillar-desc">Nutrition, bioindividuality, hormonal support, and targeted cellular repair — fueling every process your body needs to rebuild and thrive.</p>
       </div>
       <div class="pillar">
         <div class="pillar-num">03</div>
-        <div class="pillar-name">MIND</div>
-        <p class="pillar-desc">Grief processing, somatic tools, mindset frameworks, and spiritual alignment — healing the nervous system and psyche at the root, not just the surface.</p>
+        <div class="pillar-name">Mind</div>
+        <p class="pillar-desc">Grief processing, somatic tools, mindset frameworks, and spiritual alignment — healing the nervous system and psyche at the root.</p>
       </div>
     </div>
 
     <p class="how-duration">We work together for 3–6 months — depending on your starting point, biology, and desired outcome.</p>
-    <a href="#waitlist" class="btn btn-mustard">Join the Waitlist</a>
+    <a href="#waitlist" class="btn btn-terra">Join the Waitlist</a>
   </div>
 </section>
 
@@ -919,67 +871,61 @@
 <section class="what" id="includes">
   <div class="container-wide">
     <span class="section-label">What's Included</span>
-    <h2 class="section-title">EVERYTHING YOU NEED TO<br><span class="accent">BOUNCE BACK</span></h2>
+    <h2 class="section-title">Everything you need to<br><em>Bounce Back</em></h2>
 
     <div class="deliverables">
       <div class="deliver">
         <span class="deliver-icon">🎓</span>
-        <div class="deliver-title">VIDEO LESSONS</div>
-        <p class="deliver-desc">In-depth lessons guiding you through every phase — I walk you through each step personally, in my own voice.</p>
+        <div class="deliver-title">Video Lessons</div>
+        <p class="deliver-desc">In-depth lessons guiding you through every phase — I walk you through each step personally.</p>
       </div>
       <div class="deliver">
         <span class="deliver-icon">📅</span>
-        <div class="deliver-title">28-DAY RECOVERY PLAN</div>
-        <p class="deliver-desc">A day-by-day protocol for the most efficient recovery — exactly what to do and when, from day one.</p>
+        <div class="deliver-title">28-Day Recovery Plan</div>
+        <p class="deliver-desc">A day-by-day protocol for the most efficient recovery — exactly what to do and when.</p>
       </div>
       <div class="deliver">
         <span class="deliver-icon">💊</span>
-        <div class="deliver-title">SUPPLEMENT &amp; PEPTIDE PROTOCOL</div>
-        <p class="deliver-desc">Full breakdown of what I used, why, how to source it clean, and exactly how to stack it for maximum effect.</p>
+        <div class="deliver-title">Supplement &amp; Peptide Protocol</div>
+        <p class="deliver-desc">Full breakdown of what I used, how to source it clean, and how to stack it correctly.</p>
       </div>
       <div class="deliver">
         <span class="deliver-icon">🌿</span>
-        <div class="deliver-title">HERBAL REMEDIES GUIDE</div>
-        <p class="deliver-desc">A curated list of herbal tools and exactly how to integrate them into your recovery protocol.</p>
+        <div class="deliver-title">Herbal Remedies Guide</div>
+        <p class="deliver-desc">A curated list of herbal tools and exactly how to integrate them into your protocol.</p>
       </div>
       <div class="deliver">
         <span class="deliver-icon">🛒</span>
-        <div class="deliver-title">PRODUCT LIST + AFFILIATE LINKS</div>
-        <p class="deliver-desc">Every product I use and recommend — vetted for clean ingredients, quality, and effectiveness. No guesswork.</p>
+        <div class="deliver-title">Product List + Affiliate Links</div>
+        <p class="deliver-desc">Every product I use and recommend — vetted for clean ingredients and effectiveness.</p>
       </div>
       <div class="deliver">
         <span class="deliver-icon">🧘‍♀️</span>
-        <div class="deliver-title">MENTAL &amp; EMOTIONAL RECOVERY</div>
-        <p class="deliver-desc">Somatic tools, grief frameworks, movement therapy, and spiritual practices for full healing — not just physical.</p>
+        <div class="deliver-title">Mental &amp; Emotional Recovery</div>
+        <p class="deliver-desc">Somatic tools, grief frameworks, movement therapy, and spiritual practices for full healing.</p>
       </div>
     </div>
 
     <div class="what-cta">
-      <a href="#waitlist" class="btn btn-black">Join the Waitlist</a>
+      <a href="#waitlist" class="btn btn-terra">Join the Waitlist</a>
     </div>
   </div>
 </section>
 
-<!-- ==================== LEVEL UP BANNER ==================== -->
-<section class="levelup">
-  <h2 class="levelup-headline">READY TO<br>LEVEL UP?</h2>
-  <p class="levelup-sub">Join the waitlist now and be first in line for early access — and early access pricing.</p>
-  <a href="#waitlist" class="btn btn-black">I'm Ready — Join the Waitlist</a>
+<!-- ==================== CTA BAND ==================== -->
+<section class="cta-band">
+  <h2 class="cta-band-headline">Ready to get your<br><em>glow back?</em></h2>
+  <p class="cta-band-sub">Join the waitlist now — be first in line for enrollment and early access pricing.</p>
+  <a href="#waitlist" class="btn btn-outline-cream">Join the Waitlist</a>
 </section>
 
 <!-- ==================== WAITLIST ==================== -->
 <section class="waitlist" id="waitlist">
   <div class="container">
-    <span class="section-label section-label-light">Limited Spots</span>
-    <h2 class="section-title section-title-white">JOIN THE<br><span class="accent">GLOW CLUB</span></h2>
+    <span class="section-label" style="color: rgba(250,246,240,0.45);">Limited Spots</span>
+    <h2 class="section-title section-title-light">Join The <em>Glow Club</em></h2>
     <p class="waitlist-sub">Be the first to know when The Bounce Back Program opens enrollment.</p>
 
-    <!--
-      FORM SETUP:
-      1. Go to formspree.io — create a free account
-      2. Create a new form → copy your endpoint URL
-      3. Replace "https://formspree.io/f/YOUR_FORM_ID" below with your endpoint
-    -->
     <div class="form-card">
       <form id="waitlist-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
         <div class="form-grid">
@@ -1024,16 +970,15 @@
   <div class="disclaimer-box">
     <p class="disclaimer-title">Disclaimer</p>
     <p class="disclaimer-text">
-      The Bounce Back Program is for educational and informational purposes only. The content shared by Laryn Breedlove is based on personal lived experience combined with personal research in physiology, nutrition, endocrinology, and mental health — it is not intended as medical advice, diagnosis, or treatment. Individual outcomes vary based on numerous factors including biology, starting point, consistency, and health history. No specific results, recovery timelines, or health outcomes are guaranteed. Nothing in this program replaces the guidance of a qualified healthcare provider. Always consult with a licensed medical professional before making changes to your health, supplement, or lifestyle protocol — particularly in relation to pregnancy, hormonal health, or miscarriage recovery.
+      The Bounce Back Program is for educational and informational purposes only. The content shared by Laryn Breedlove is based on personal lived experience combined with personal research in physiology, nutrition, endocrinology, and mental health — it is not intended as medical advice, diagnosis, or treatment. Individual outcomes vary based on numerous factors including biology, starting point, consistency, and health history. No specific results, recovery timelines, or health outcomes are guaranteed. Always consult with a licensed medical professional before making changes to your health, supplement, or lifestyle protocol.
     </p>
   </div>
 </section>
 
 <!-- ==================== FOOTER ==================== -->
 <footer>
-  <p class="footer-name">LARYN BREEDLOVE</p>
+  <p class="footer-name">Laryn Breedlove</p>
   <div class="footer-socials">
-    <!-- Replace # with your actual profile URLs -->
     <a href="#" target="_blank" rel="noopener">Instagram</a>
     <a href="#" target="_blank" rel="noopener">TikTok</a>
     <a href="#" target="_blank" rel="noopener">X (Twitter)</a>
@@ -1056,32 +1001,18 @@
 
   form.addEventListener('submit', async (e) => {
     const action = form.getAttribute('action');
-
     if (action.includes('YOUR_FORM_ID')) {
       e.preventDefault();
       showToast('Form not connected yet — see code comments for setup.', 5000);
       return;
     }
-
     e.preventDefault();
     const data = new FormData(form);
-
     try {
-      const res = await fetch(action, {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' }
-      });
-
-      if (res.ok) {
-        form.reset();
-        showToast("You're on the list! We'll be in touch.");
-      } else {
-        showToast('Something went wrong. Please try again.');
-      }
-    } catch {
-      showToast('Something went wrong. Please try again.');
-    }
+      const res = await fetch(action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+      if (res.ok) { form.reset(); showToast("You're on the list! We'll be in touch."); }
+      else showToast('Something went wrong. Please try again.');
+    } catch { showToast('Something went wrong. Please try again.'); }
   });
 </script>
 </body>
