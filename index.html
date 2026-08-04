@@ -124,18 +124,9 @@
       justify-content: center;
     }
 
-    .hero-photo-frame {
-      width: 82%;
-      height: 78vh;
-      border-radius: 300px 300px 0 0;
-      overflow: hidden;
-      background: var(--cream-dk);
-      flex-shrink: 0;
-    }
-
-    .hero-photo-frame img {
-      width: 100%;
-      height: 100%;
+    .hero-right img {
+      width: 85%;
+      max-height: 78vh;
       object-fit: cover;
       object-position: top center;
       display: block;
@@ -728,7 +719,7 @@
       .hero { grid-template-columns: 1fr; padding: 6rem 6% 0; }
       .hero-left { padding: 3rem 0 2rem; text-align: center; }
       .hero-ctas { justify-content: center; }
-      .hero-photo-frame { width: 70%; height: 55vw; border-radius: 200px 200px 0 0; }
+      .hero-right img { max-height: 60vw; }
       .hero-scroll { left: 50%; transform: translateX(-50%); bottom: 1rem; }
       .story-grid  { grid-template-columns: 1fr; gap: 2.5rem; }
       .story-accent { display: none; }
@@ -773,9 +764,7 @@
     </div>
   </div>
   <div class="hero-right">
-    <div class="hero-photo-frame">
-      <img src="LandingPage/IMG_1047.JPG" alt="Laryn Breedlove">
-    </div>
+    <img src="LandingPage/IMG_1047.JPG" alt="Laryn Breedlove">
   </div>
   <div class="hero-scroll">
     <div class="scroll-line"></div>
