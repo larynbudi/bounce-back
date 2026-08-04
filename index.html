@@ -101,11 +101,10 @@
 
     /* ==================== HERO ==================== */
     .hero {
-      min-height: 100vh;
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
-      padding: 8rem 6% 0 6%;
+      padding: 6rem 0 0 6%;
       background: var(--cream);
       position: relative;
       overflow: hidden;
@@ -113,23 +112,21 @@
     }
 
     .hero-left {
-      padding: 4rem 4rem 4rem 0;
+      padding: 5rem 4rem 5rem 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
 
     .hero-right {
-      height: 100vh;
       position: relative;
     }
 
     .hero-right img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
+      height: auto;
       display: block;
+      vertical-align: bottom;
     }
 
     .hero-eyebrow {
@@ -716,11 +713,11 @@
 
     /* ==================== RESPONSIVE ==================== */
     @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; padding: 8rem 6% 4rem; }
-      .hero-left { padding: 0; text-align: center; }
+      .hero { grid-template-columns: 1fr; padding: 6rem 6% 0; }
+      .hero-left { padding: 3rem 0 2rem; text-align: center; }
       .hero-ctas { justify-content: center; }
-      .hero-right { height: 60vw; min-height: 320px; }
-      .hero-scroll { left: 50%; transform: translateX(-50%); bottom: -2rem; }
+      .hero-right img { max-height: 80vw; width: 100%; object-fit: cover; object-position: top center; }
+      .hero-scroll { left: 50%; transform: translateX(-50%); bottom: 1rem; }
       .story-grid  { grid-template-columns: 1fr; gap: 2.5rem; }
       .story-accent { display: none; }
       .pillars     { grid-template-columns: 1fr; }
