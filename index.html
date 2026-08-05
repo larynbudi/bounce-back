@@ -347,21 +347,28 @@
     .origin {
       background: var(--ink);
       text-align: center;
+      padding: 4rem 6%;
     }
 
     .origin .container { max-width: 720px; }
 
-    .origin-quote {
-      font-family: 'Libre Baskerville', serif;
-      font-size: clamp(1.3rem, 3vw, 2rem);
-      font-style: italic;
-      font-weight: 400;
-      color: rgba(250,246,240,0.85);
-      line-height: 1.6;
-      margin: 2rem 0 3rem;
+    /* Word-by-word bounce animation */
+    .bounce-word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(28px);
     }
 
-    .origin-quote em { color: var(--gold); font-style: normal; }
+    .bounce-word.visible {
+      animation: wordBounce 0.55s ease forwards;
+    }
+
+    @keyframes wordBounce {
+      0%   { opacity: 0; transform: translateY(28px); }
+      55%  { opacity: 1; transform: translateY(-10px); }
+      75%  { transform: translateY(4px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
 
     /* ==================== HOW IT WORKS ==================== */
     .how { background: var(--cream-dk); }
@@ -811,14 +818,17 @@
 <!-- ==================== ORIGIN ==================== -->
 <section class="origin">
   <div class="container">
-    <span class="section-label" style="color: rgba(250,246,240,0.5);">How It Began</span>
-    <h2 class="section-title section-title-light">
-      This is how The Bounce Back<br>Program was <em>Born</em>
+    <h2 class="section-title section-title-light origin-headline">
+      <span class="bounce-word">This</span>
+      <span class="bounce-word">is</span>
+      <span class="bounce-word">how</span>
+      <span class="bounce-word">The</span>
+      <span class="bounce-word">Bounce</span>
+      <span class="bounce-word">Back</span><br>
+      <span class="bounce-word">Program</span>
+      <span class="bounce-word">was</span>
+      <span class="bounce-word"><em>Born</em></span>
     </h2>
-    <p class="origin-quote">
-      "A comprehensive program and roadmap to guide you in <em>rebalancing your hormones</em>, regaining mental clarity, and optimizing your body."
-    </p>
-    <a href="#waitlist" class="btn btn-gold">Join the Waitlist</a>
   </div>
 </section>
 
@@ -1008,6 +1018,23 @@
     toast.textContent = msg;
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), duration);
+  }
+
+  // Word-by-word bounce on scroll
+  const originHeadline = document.querySelector('.origin-headline');
+  if (originHeadline) {
+    const words = originHeadline.querySelectorAll('.bounce-word');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          words.forEach((word, i) => {
+            setTimeout(() => word.classList.add('visible'), i * 90);
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    observer.observe(originHeadline);
   }
 
   form.addEventListener('submit', async (e) => {
