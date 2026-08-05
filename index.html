@@ -343,6 +343,32 @@
       opacity: 0.4;
     }
 
+    /* ==================== PROOF ==================== */
+    .proof { background: var(--cream); }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .proof-text p {
+      font-family: 'Libre Baskerville', serif;
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.8;
+      margin-bottom: 1.4rem;
+    }
+
+    .proof-photo-wrap { position: relative; }
+
+    @media (max-width: 900px) {
+      .proof-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
     /* ==================== ORIGIN ==================== */
     .origin {
       background: var(--ink);
@@ -807,6 +833,25 @@
         <p>As a biomedical scientist and wellness influencer, I believed I had it all figured out — until I faced multiple health crises, two pregnancy losses, and unexplainable inflammation in my shoulder and jaw. I spent almost a year in doctor's offices, clinics, and emergency rooms.</p>
         <p>This forced me to rethink everything I knew about health, relearn from scratch, and build a new approach from the ground up. What I discovered changed everything.</p>
 <a href="#waitlist" class="btn btn-terra">Join the Waitlist</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PROOF ==================== -->
+<section class="proof">
+  <div class="container-wide">
+    <div class="proof-grid">
+      <div class="proof-text">
+        <p>"I developed a Stacking Framework — targeting inflammation, hormones, and cellular repair simultaneously.</p>
+        <p>I have recovered my fertility and now I am 40 weeks pregnant expecting my baby boy to arrive any day! My multi-factorial intervention to recovery allowed my body to not only recover fast after my pregnancy losses but also conceive again within a short period of time.</p>
+        <p>This is not one fix. It is a system."</p>
+      </div>
+      <div class="proof-photo-wrap">
+        <div class="story-photo-placeholder">
+          <span>Add your photo here</span>
+        </div>
+        <div class="story-accent"></div>
       </div>
     </div>
   </div>
