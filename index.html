@@ -399,13 +399,27 @@
     /* ==================== HOW IT WORKS ==================== */
     .how { background: var(--cream-dk); }
 
+    .how-intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.75fr;
+      gap: 5rem;
+      align-items: center;
+      margin-bottom: 4rem;
+    }
+
+    .how-intro-photo .story-photo-placeholder {
+      aspect-ratio: 4/5;
+    }
+
+    @media (max-width: 900px) {
+      .how-intro-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
     .how-intro {
       font-size: 1rem;
       font-weight: 300;
       color: var(--ink-soft);
       line-height: 1.9;
-      max-width: 660px;
-      margin-bottom: 4rem;
     }
 
     .optimize-row {
@@ -876,12 +890,43 @@
 <!-- ==================== HOW IT WORKS ==================== -->
 <section class="how" id="program">
   <div class="container-wide">
-    <span class="section-label">The Framework</span>
-    <h2 class="section-title">How it <em>Works</em></h2>
-    <p class="how-intro">
-      The Bounce Back Program is a three-pillar system and multi-factorial intervention to optimize your body. These pillars are not sequential — you work on all three simultaneously. The improvement on each pillar compounds, giving results far faster than working on each pillar alone.
-    </p>
 
+    <!-- Intro: text left, photo right -->
+    <div class="how-intro-grid">
+      <div class="how-intro-text">
+        <span class="section-label">The Framework</span>
+        <h2 class="section-title">How it <em>Works</em></h2>
+        <p class="how-intro">
+          The Bounce Back Program is a three-pillar system and multi-factorial intervention to optimize your body. These pillars are not sequential — you work on all three simultaneously. The improvement on each pillar compounds, giving results far faster than working on each pillar alone.
+        </p>
+      </div>
+      <div class="how-intro-photo">
+        <div class="story-photo-placeholder">
+          <span>Add photo here</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pillars -->
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <div class="pillar-name">Environment</div>
+        <p class="pillar-desc">Light therapy, grounding, lymphatic drainage, movement, supplements, and peptides — repairing your body at the cellular and endocrine level.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <div class="pillar-name">Body</div>
+        <p class="pillar-desc">Nutrition, bioindividuality, hormonal support, and targeted cellular repair — fueling every process your body needs to rebuild and thrive.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <div class="pillar-name">Mind</div>
+        <p class="pillar-desc">Grief processing, somatic tools, mindset frameworks, and spiritual alignment — healing the nervous system and psyche at the root.</p>
+      </div>
+    </div>
+
+    <!-- Optimize row -->
     <span class="section-label" style="margin-bottom: 1rem;">We Optimize Your</span>
     <div class="optimize-row">
       <div class="optimize-cell">
@@ -903,24 +948,6 @@
       <div class="optimize-cell">
         <span class="optimize-icon">🧠</span>
         <span class="optimize-name">Mindset</span>
-      </div>
-    </div>
-
-    <div class="pillars">
-      <div class="pillar">
-        <div class="pillar-num">01</div>
-        <div class="pillar-name">Environment</div>
-        <p class="pillar-desc">Light therapy, grounding, lymphatic drainage, movement, supplements, and peptides — repairing your body at the cellular and endocrine level.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-num">02</div>
-        <div class="pillar-name">Body</div>
-        <p class="pillar-desc">Nutrition, bioindividuality, hormonal support, and targeted cellular repair — fueling every process your body needs to rebuild and thrive.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-num">03</div>
-        <div class="pillar-name">Mind</div>
-        <p class="pillar-desc">Grief processing, somatic tools, mindset frameworks, and spiritual alignment — healing the nervous system and psyche at the root.</p>
       </div>
     </div>
 
