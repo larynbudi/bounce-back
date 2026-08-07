@@ -370,31 +370,53 @@
       .proof-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     }
 
-    /* ==================== ORIGIN ==================== */
-    .origin {
+    /* ==================== OBJECTIONS ==================== */
+    .objections {
       background: var(--ink);
-      text-align: center;
-      padding: 4rem 6%;
+      padding: 5rem 6%;
     }
 
-    .origin .container { max-width: 720px; }
+    .objections .section-title { margin-bottom: 3rem; }
 
-    /* Word-by-word bounce animation */
-    .bounce-word {
-      display: inline-block;
-      opacity: 0;
-      transform: translateY(28px);
+    .obj-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
     }
 
-    .bounce-word.visible {
-      animation: wordBounce 0.55s ease forwards;
+    .obj-card {
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 2rem 1.75rem;
+      transition: border-color 0.2s, background 0.2s;
     }
 
-    @keyframes wordBounce {
-      0%   { opacity: 0; transform: translateY(28px); }
-      55%  { opacity: 1; transform: translateY(-10px); }
-      75%  { transform: translateY(4px); }
-      100% { opacity: 1; transform: translateY(0); }
+    .obj-card:hover {
+      border-color: var(--gold);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .obj-q {
+      font-family: 'Libre Baskerville', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--gold);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .obj-a {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: rgba(250,246,240,0.7);
+      line-height: 1.8;
+    }
+
+    @media (max-width: 900px) {
+      .obj-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .obj-grid { grid-template-columns: 1fr; }
     }
 
     /* ==================== HOW IT WORKS ==================== */
@@ -871,20 +893,44 @@
   </div>
 </section>
 
-<!-- ==================== ORIGIN ==================== -->
-<section class="origin">
-  <div class="container">
-    <h2 class="section-title section-title-light origin-headline">
-      <span class="bounce-word">This</span>
-      <span class="bounce-word">is</span>
-      <span class="bounce-word">how</span>
-      <span class="bounce-word">The</span>
-      <span class="bounce-word">Bounce</span>
-      <span class="bounce-word">Back</span><br>
-      <span class="bounce-word">Program</span>
-      <span class="bounce-word">was</span>
-      <span class="bounce-word"><em>Born</em></span>
-    </h2>
+<!-- ==================== OBJECTIONS ==================== -->
+<section class="objections">
+  <div class="container-wide">
+    <span class="section-label" style="color:rgba(250,246,240,0.5);">Sounds Familiar?</span>
+    <h2 class="section-title section-title-light">I know exactly what's<br><em>holding you back.</em></h2>
+    <div class="obj-grid">
+
+      <div class="obj-card">
+        <p class="obj-q">"I don't want kids — is this program still for me?"</p>
+        <p class="obj-a">If you want a balanced and optimized body then YES! Fertility is one of the most accurate markers of your vitality and therefore your aging.</p>
+      </div>
+
+      <div class="obj-card">
+        <p class="obj-q">"I have no time! I'm a working mom."</p>
+        <p class="obj-a">I got you — so am I. This program works by changing small things all around you that compound and give you a better result.</p>
+      </div>
+
+      <div class="obj-card">
+        <p class="obj-q">"I'll just do peptides without the program."</p>
+        <p class="obj-a">Yes, but you are cheating yourself. Using only a pharmaceutical compound without the necessary framework and lifestyle change can end really badly.</p>
+      </div>
+
+      <div class="obj-card">
+        <p class="obj-q">"I have bad genetics."</p>
+        <p class="obj-a">Most of how we look and feel comes from our daily habits. I look nothing like my aunts. I decided to do things differently and achieve my best version.</p>
+      </div>
+
+      <div class="obj-card">
+        <p class="obj-q">"I'm already eating healthy and exercising — isn't that enough?"</p>
+        <p class="obj-a">So was I. As a wellness influencer I believed I was doing everything right — until I realized my body was suffering underneath. I looked good on the outside but was struggling on the inside.</p>
+      </div>
+
+      <div class="obj-card">
+        <p class="obj-q">"I'm too old for this to make a difference."</p>
+        <p class="obj-a">I look and feel much better now than I did in my 20s. Back then I was taking my body for granted. Now that I am connected with my body I am in a better flow and it has been much easier to keep balanced.</p>
+      </div>
+
+    </div>
   </div>
 </section>
 
