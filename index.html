@@ -125,26 +125,24 @@
       justify-content: center;
     }
 
-    .hero-photo-wrap {
+    .how-photo-wrap {
       position: relative;
       display: inline-block;
+      width: 100%;
     }
 
-    .hero-photo-wrap img {
-      max-width: 100%;
-      max-height: 92vh;
-      width: auto;
-      height: auto;
+    .how-photo-wrap img {
+      width: 100%;
       display: block;
       border-radius: 32px;
     }
 
     .circle-badge {
       position: absolute;
-      top: -44px;
-      left: -44px;
-      width: 150px;
-      height: 150px;
+      top: -60px;
+      left: -60px;
+      width: 200px;
+      height: 200px;
       animation: rotateBadge 14s linear infinite;
       z-index: 2;
       pointer-events: none;
@@ -879,19 +877,7 @@
     </div>
   </div>
   <div class="hero-right">
-    <div class="hero-photo-wrap">
-      <img src="LandingPage/IMG_10482.jpg" alt="Laryn Breedlove">
-      <div class="circle-badge">
-        <svg viewBox="0 0 160 160" width="150" height="150" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <path id="heroBadgePath" d="M 80,80 m -62,0 a 62,62 0 1,1 124,0 a 62,62 0 1,1 -124,0"/>
-          </defs>
-          <text font-size="9" fill="rgba(250,246,240,0.88)" font-family="Jost, sans-serif" font-weight="500" letter-spacing="0">
-            <textPath href="#heroBadgePath" textLength="390" lengthAdjust="spacing">MOVEMENT · NUTRITION · SUPPLEMENTS · PEPTIDES · MINDSET</textPath>
-          </text>
-        </svg>
-      </div>
-    </div>
+    <img src="LandingPage/IMG_10482.jpg" alt="Laryn Breedlove">
   </div>
 </section>
 
@@ -992,7 +978,19 @@
         </p>
       </div>
       <div class="how-intro-photo">
-        <img src="LandingPage/workout.jpg" alt="Laryn Breedlove" class="story-photo">
+        <div class="how-photo-wrap">
+          <img src="LandingPage/workout.jpg" alt="Laryn Breedlove">
+          <div class="circle-badge">
+            <svg viewBox="0 0 200 200" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <path id="howBadgePath" d="M 100,100 m -78,0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0"/>
+              </defs>
+              <text font-size="12" fill="oklch(75% 0.12 30)" font-family="Jost, sans-serif" font-weight="600" letter-spacing="0">
+                <textPath href="#howBadgePath" textLength="490" lengthAdjust="spacing">MOVEMENT · NUTRITION · SUPPLEMENTS · PEPTIDES · MINDSET</textPath>
+              </text>
+            </svg>
+          </div>
+        </div>
       </div>
     </div>
 
