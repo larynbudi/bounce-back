@@ -795,11 +795,15 @@
     }
 
     /* ==================== RESPONSIVE ==================== */
+    .hero-mid-img { display: none; }
+
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; padding: 6rem 6% 0; }
       .hero-left { padding: 3rem 0 2rem; text-align: center; }
       .hero-ctas { justify-content: center; }
-      .hero-right img { max-height: 100vw; width: 90%; }
+      .hero-right { display: none; }
+      .hero-mid-img { display: block; margin: 1.5rem auto; width: 90%; }
+      .hero-mid-img img { width: 100%; border-radius: 32px; }
       .hero-scroll { left: 50%; transform: translateX(-50%); bottom: 1rem; }
       .story-grid  { grid-template-columns: 1fr; gap: 2.5rem; }
       .story-accent { display: none; }
@@ -834,6 +838,9 @@
     <span class="hero-eyebrow">Your path to a fit and feminine body</span>
     <h1 class="hero-headline"><span class="hero-get-the">Get The</span> <em>Glow</em></h1>
     <p class="hero-sub">Step into your Hot &amp; Healthy Era</p>
+    <div class="hero-mid-img">
+      <img src="LandingPage/IMG_10482.jpg" alt="Laryn Breedlove">
+    </div>
     <p class="hero-tagline">
       A comprehensive program to rebalance your hormones, regain mental clarity,
       and fully optimize your body. Built from lived experience and deep research.
