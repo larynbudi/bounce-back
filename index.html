@@ -227,12 +227,19 @@
     /* ==================== TRUST BAR ==================== */
     .trust-bar {
       background: var(--ink);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      padding: 1rem 6%;
-      gap: 0;
+      overflow: hidden;
+      padding: 0.9rem 0;
+      white-space: nowrap;
+    }
+
+    .trust-track {
+      display: inline-flex;
+      animation: marquee 20s linear infinite;
+    }
+
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     .trust-item {
@@ -241,11 +248,10 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: rgba(250,246,240,0.6);
-      padding: 0.25rem 1.5rem;
+      padding: 0.25rem 2rem;
       border-right: 1px solid rgba(255,255,255,0.12);
+      flex-shrink: 0;
     }
-
-    .trust-item:last-child { border-right: none; }
 
     /* ==================== LAYOUT ==================== */
     .container      { max-width: 960px; margin: 0 auto; }
@@ -858,10 +864,16 @@
 
 <!-- ==================== TRUST BAR ==================== -->
 <div class="trust-bar">
-  <div class="trust-item">Where Science Meets Ancient Wisdom</div>
-  <div class="trust-item">Stacking Framework</div>
-  <div class="trust-item">Inflammation · Hormones · Cellular Repair</div>
-  <div class="trust-item">3–6 Month Program</div>
+  <div class="trust-track">
+    <div class="trust-item">Where Science Meets Ancient Wisdom</div>
+    <div class="trust-item">Stacking Framework</div>
+    <div class="trust-item">Inflammation · Hormones · Cellular Repair</div>
+    <div class="trust-item">3–6 Month Program</div>
+    <div class="trust-item">Where Science Meets Ancient Wisdom</div>
+    <div class="trust-item">Stacking Framework</div>
+    <div class="trust-item">Inflammation · Hormones · Cellular Repair</div>
+    <div class="trust-item">3–6 Month Program</div>
+  </div>
 </div>
 
 <!-- ==================== STORY ==================== -->
