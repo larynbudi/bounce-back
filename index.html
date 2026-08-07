@@ -235,6 +235,39 @@
       animation: fadeUp 0.7s 0.62s ease forwards;
     }
 
+    .hero-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      max-width: 380px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.62s ease forwards;
+    }
+
+    .hero-form input {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      padding: 0.85rem 1.1rem;
+      border: 1.5px solid var(--terra);
+      border-radius: 6px;
+      background: transparent;
+      color: var(--ink);
+      outline: none;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .hero-form input::placeholder { color: oklch(55% 0.04 40); }
+    .hero-form input:focus { border-color: var(--ink); }
+
+    .hero-form .btn {
+      width: 100%;
+      padding: 0.9rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+    }
+
     .hero-scroll {
       position: absolute;
       bottom: 2rem;
@@ -890,10 +923,11 @@
       A comprehensive program to rebalance your hormones, regain mental clarity,
       and fully optimize your body. Built from lived experience and deep research.
     </p>
-    <div class="hero-ctas">
-      <a href="#story" class="btn btn-outline">My Story</a>
-      <a href="#waitlist" class="btn btn-terra">Join the Waitlist</a>
-    </div>
+    <form class="hero-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <button type="submit" class="btn btn-terra">Join the Waitlist</button>
+    </form>
   </div>
   <div class="hero-right">
     <img src="LandingPage/IMG_10482.jpg" alt="Laryn Breedlove">
